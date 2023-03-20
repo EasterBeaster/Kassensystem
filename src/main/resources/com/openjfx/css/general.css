@@ -1,0 +1,36 @@
+*:focused {
+	-fx-focus-color: transparent;
+	-fx-faint-focus-color: transparent;
+	-fx-default-button: transparent;
+	-fx-body-color: transparent;
+	/*-fx-inner-border: transparent;
+	-fx-outer-border: transparent;*/
+}
+
+.root {
+	-fx-font-size: 10pt;
+	-fx-background-color: #eeebd3;
+}
+
+.mainframe {
+}
+
+.button {
+	-fx-max-width: 999px;
+	-fx-max-height: 999px;
+	-fx-border-color: black;
+	-fx-border-width: 1px;
+	-fx-background-insets: 1px;
+	-fx-cursor: hand;
+}
+
+.totalscreen_header {
+	-fx-background-color: black, #6ef122;
+	-fx-background-insets: 0, 2;
+	/* -fx-border-radius: 10px; */
+	-fx-background-radius: 10px;
+}
+
+#totalscreen {
+	/* -fx-text-fill: white; */
+}

@@ -1,0 +1,60 @@
+.controlarea {
+	-fx-spacing: 5px;
+	-fx-border-radius: 10px;
+	-fx-background-radius: 10px;
+}
+
+#numpad {
+}
+
+.controlarea .button {
+	-fx-background-radius: 4px;
+	/*-fx-border-insets: 1;*/
+	-fx-border-radius: 4px;
+}
+
+.controlarea .button:armed {
+	/*-fx-background-color: ;
+	-fx-blend-mode: ;
+	-fx-dropshadow: ;*/
+	/*-fx-scale-x: 1.1;
+	-fx-scale-y: 1.1;
+	-fx-scale-z: 1.1;*/
+}
+
+.numbtn            { -fx-background-color: #DBDBDB; }
+.acbtn             { -fx-background-color: #a8a8a8; }
+#btn_remove        { -fx-background-color: #a8a8a8; }
+#btn_inc, #btn_dec { -fx-background-color: #83e383; }
+#btn_abort         { -fx-background-color: #fc7c46; }
+
+#btn_pay {
+	/* -fx-background-image: url(../images/Cash_Icon.png); */
+	-fx-background-size: contain;
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+}
+
+#smallscreen {
+	-fx-background-color: white;
+	-fx-text-fill: #555;
+	-fx-border-color: black;
+	-fx-border-width: 1px;
+	-fx-border-radius: 2px;
+}
+
+#btn_inc, #btn_dec {
+	/*-fx-font-weight: 900;*/
+	-fx-font-size: 2em;
+	-fx-padding: -20;
+	/*-fx-border-insets:    -2em 0 -2em 0;*/
+}
+
+#btn_enter {
+	-fx-fill: black;
+	/* -fx-shape: "m17 26c-.1 0-.3 0-.4-.1l-3-3c-.2-.2-.2-.5 0-.7l3-3c.2-.2.5-.2.7 0 .2.2.2.5 0 .7l-2.6 2.6 2.6 2.6c.2.2.2.5 0 .7 0 .2-.2.2-.3.2zm-3-4h6.04c.8 0 1.5-.7 1.5-1.5v-7.8c0-.3.2-.5.5-.5.3 0 .5.2.5.5v7.8c0 1.4-1.1 2.5-2.5 2.5H14Z"; */
+}
+#btn_enter SVGPath {
+	-fx-fill: black;
+	-fx-shape: "m 17,26 c -0.1,0 -0.3,0 -0.4,-0.1 l -3,-3 c -0.2,-0.2 -0.2,-0.5 0,-0.7 l 3,-3 c 0.2,-0.2 0.5,-0.2 0.7,0 0.2,0.2 0.2,0.5 0,0.7 l -2.6,2.6 2.6,2.6 c 0.2,0.2 0.2,0.5 0,0.7 0,0.2 -0.2,0.2 -0.3,0.2 z m -3,-4 h 6.04 c 0.8,0 1.5,-0.7 1.5,-1.5 v -7.8 c 0,-0.3 0.2,-0.5 0.5,-0.5 0.3,0 0.5,0.2 0.5,0.5 v 7.8 c 0,1.4 -1.1,2.5 -2.5,2.5 H 14 Z";
+}

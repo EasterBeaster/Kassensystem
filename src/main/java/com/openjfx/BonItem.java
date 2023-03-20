@@ -8,9 +8,9 @@ public class BonItem
 	private final Article article_ref;
 
 	public BonItem (Article a, int amount) {
-		this.name = new SimpleStringProperty(a.name);
+		this.name = new SimpleStringProperty(a.name());
 		this.amount = new SimpleIntegerProperty(amount);
-		this.price = new SimpleObjectProperty<>(a.baseprice.multiply(amount));
+		this.price = new SimpleObjectProperty<>(a.baseprice().multiply(amount));
 		this.article_ref = a;
 	}
 
@@ -18,14 +18,14 @@ public class BonItem
 		this.article_ref = new Article(name, name, price);
 		this.name = new SimpleStringProperty(name);
 		this.amount = new SimpleIntegerProperty(amount);
-		this.price = new SimpleObjectProperty<>(article_ref.baseprice.multiply(amount));
+		this.price = new SimpleObjectProperty<>(article_ref.baseprice().multiply(amount));
 	}
 
 	public BonItem (String name, int amount, double price) {
 		this.article_ref = new Article(name, name, price);
 		this.name = new SimpleStringProperty(name);
 		this.amount = new SimpleIntegerProperty(amount);
-		this.price = new SimpleObjectProperty<>(article_ref.baseprice.multiply(amount));
+		this.price = new SimpleObjectProperty<>(article_ref.baseprice().multiply(amount));
 	}
 
 
@@ -45,7 +45,7 @@ public class BonItem
 	public void setAmount(Integer amount) {
 		if(amount > 0) {
 			this.amount.set(amount);
-			this.price.set(article_ref.baseprice.multiply(amount));
+			this.price.set(article_ref.baseprice().multiply(amount));
 		}
 	}
 
@@ -58,4 +58,8 @@ public class BonItem
 	/*public void setPrice(Price price) { this.price.set(price); }
 	public void setPrice(String price) { this.price.set(new Price(price)); }*/
 
+
+	public Article getArticle() {
+		return article_ref;
+	}
 }

@@ -1,144 +1,165 @@
 {
-  "order": ["Brötchen", "Brot", "Frisch", "Getränke", "Kuchen", "Feingebäck", "Sonstiges"],
+  "order": ["Brötchen", "Brot", "Getränke", "Feingebäck", "Kuchen", "Frisch", "Sonstiges"],
   
   "Brötchen": {
     "rows": 5,
-    "columns": 5,
+    "columns": 4,
     "theme-colors": ["#ff34da", "#45fa57"],
     "theme-direction": "rows",
     "buttons": [
-      { "name": "Brötchen", 					"shortname": "Bröt.", 					"price": 0.45, "x": 0, "y": 0 },
-      { "name": "Sonnenblumenkern-Brötchen", 	"shortname": "Sonnenkern-Bröt.", 		"price": 0.55, "x": 0, "y": 1 },
-      { "name": "Mehrkorn-B.", 					"shortname": "Bröt.", 					"price": 0.45, "x": 0, "y": 2 },
-      { "name": "Laugen-B.", 					"shortname": "Bröt.", 					"price": 0.45, "x": 0, "y": 3 },
-      { "name": "Mohn-B.", 						"shortname": "Bröt.", 					"price": 0.45, "x": 0, "y": 4 },
-      { "name": "Kürbiskern-B.", 				"shortname": "Bröt.", 					"price": 0.45, "x": 1, "y": 0 },
-      { "name": "Croissant", 					"shortname": "Bröt.", 					"price": 0.45, "x": 1, "y": 1 },
-      { "name": "Dinkel-B.", 					"shortname": "Bröt.", 					"price": 0.45, "x": 1, "y": 2 },
-      { "name": "Dinkelkrusti", 				"shortname": "Bröt.", 					"price": 0.45, "x": 1, "y": 3 },
-      { "name": "Stütchen", 					"shortname": "Bröt.", 					"price": 0.45, "x": 1, "y": 4 },
-      { "name": "Sesam-B.", 					"shortname": "Bröt.", 					"price": 0.45, "x": 2, "y": 0 },
-      { "name": "Malz-Fünfkorn-B.", 			"shortname": "Bröt.", 					"price": 0.45, "x": 2, "y": 1 },
-      { "name": "Stütchen (mit Rosinen)", 		"shortname": "Bröt.", 					"price": 0.45, "x": 2, "y": 2 },
-      { "name": "Roggen-B.", 					"shortname": "Bröt.", 					"price": 0.45, "x": 2, "y": 3 },
-      { "name": "Vollkorn-B.", 					"shortname": "Bröt.", 					"price": 0.45, "x": 2, "y": 4 },
-      { "name": "Laugenecke", 					"shortname": "Bröt.", 					"price": 0.45, "x": 3, "y": 0 }
+      { "name": "Brötchen", 					"shortname": "Brötchen", 				"price": 0.45, "x": 0, "y": 0, "columnspan": 2 },
+      { "name": "Mohn-Brötchen", 				"shortname": "Mohn", 					"price": 0.55, "x": 2, "y": 0 },
+      { "name": "Sesam-Brötchen", 				"shortname": "Sesam", 					"price": 0.55, "x": 3, "y": 0 },
+      { "name": "Vollkorn-Brötchen", 			"shortname": "Vollkornb.", 				"price": 0.65, "x": 0, "y": 1 },
+      { "name": "Mehrkorn-Brötchen", 			"shortname": "Mehrkorn-B.", 			"price": 0.60, "x": 1, "y": 1 },
+      { "name": "Dinkel-Brötchen", 				"shortname": "Dinkel-B.", 				"price": 0.55, "x": 2, "y": 1 },
+      { "name": "Roggen-Brötchen", 				"shortname": "Roggen-B.", 				"price": 0.55, "x": 3, "y": 1 },
+      { "name": "Sonnenblumenkern-Brötchen", 	"shortname": "Sonnenkern-Bröt.", 		"price": 0.80, "x": 0, "y": 2 },
+      { "name": "Kürbiskern-Brötchen", 			"shortname": "Kürbiskern-B.", 			"price": 0.95, "x": 1, "y": 2 },
+      { "name": "Malz-Fünfkorn-Brötchen", 		"shortname": "Malz-Fünfkorn-B.", 		"price": 1.15, "x": 2, "y": 2 },
+      { "name": "Stütchen", 					"shortname": "Stütchen", 				"price": 1.30, "x": 0, "y": 3 },
+      { "name": "Stütchen (mit Rosinen)", 		"shortname": "Stütchen (mit Rosinen)", 	"price": 1.40, "x": 1, "y": 3 },
+      { "name": "Laugen-Brötchen", 				"shortname": "Laugen-B.", 				"price": 1.50, "x": 2, "y": 3 },
+      { "name": "Laugenecke", 					"shortname": "Laugenecke", 				"price": 1.75, "x": 3, "y": 3 },
+      { "name": "Croissant", 					"shortname": "Croissant", 				"price": 1.90, "x": 0, "y": 4 },
+      { "name": "Schoko-Croissant", 			"shortname": "Schoko-Croissant", 		"price": 2.00, "x": 1, "y": 4 },
+      { "name": "Dinkelkrusti", 				"shortname": "Dinkelkrusti", 			"price": 0.45, "x": 2, "y": 4 }
     ]
   },
 
 
   "Brot": {
+    "rows": 7,
+    "columns": 3,
     "buttons": [
-      { "name": "Weißbrot", 					"shortname": "Bröt.", 				"price": 0.45, "x": 0, "y": 0 },
-      { "name": "Weizen Misch Brot", 			"shortname": "Bröt.", 				"price": 0.45, "x": 0, "y": 1 },
-      { "name": "Roggenbrot", 					"shortname": "Bröt.", 				"price": 0.45, "x": 0, "y": 2 },
-      { "name": "Roggen Misch Brot", 			"shortname": "Bröt.", 				"price": 0.45, "x": 0, "y": 3 },
-      { "name": "Roggen Vollkorn Brot", 		"shortname": "Bröt.", 				"price": 0.45, "x": 0, "y": 4 },
-      { "name": "Dinkel Vollkorn Brot", 		"shortname": "Bröt.", 				"price": 0.45, "x": 1, "y": 0 },
-      { "name": "3-Korn-Brot", 					"shortname": "Bröt.", 				"price": 0.45, "x": 1, "y": 1 },
-      { "name": "4-Korn-Brot", 					"shortname": "Bröt.", 				"price": 0.45, "x": 1, "y": 2 },
-      { "name": "Vollkornbrot", 				"shortname": "Bröt.", 				"price": 0.45, "x": 1, "y": 3 },
-      { "name": "Mehrkornbrot", 				"shortname": "Bröt.", 				"price": 0.45, "x": 1, "y": 4 },
-      { "name": "Quarkbrot", 					"shortname": "Bröt.", 				"price": 0.45, "x": 2, "y": 0 },
-      { "name": "Kartoffelbrot", 				"shortname": "Bröt.", 				"price": 0.45, "x": 2, "y": 1 },
-      { "name": "Paderborner Landbrot", 		"shortname": "Bröt.", 				"price": 0.45, "x": 2, "y": 2 },
-      { "name": "Schrotbrot", 					"shortname": "Bröt.", 				"price": 0.45, "x": 2, "y": 3 },
-      { "name": "Weltmeisterbrot", 				"shortname": "Bröt.", 				"price": 0.45, "x": 2, "y": 4 },
-      { "name": "Urgetreidebrot", 				"shortname": "Bröt.", 				"price": 0.45, "x": 3, "y": 0 },
-      { "name": "Pumpernickel", 				"shortname": "Bröt.", 				"price": 0.45, "x": 3, "y": 1 },
-      { "name": "Schwarzbrot", 					"shortname": "Bröt.", 				"price": 0.45, "x": 3, "y": 2 },
-      { "name": "Walnussbrot", 					"shortname": "Bröt.", 				"price": 0.45, "x": 3, "y": 3 },
-      { "name": "Baguette", 					"shortname": "Bröt.", 				"price": 0.45, "x": 3, "y": 4 },
-      { "name": "Ciabatta", 					"shortname": "Bröt.", 				"price": 0.45, "x": 4, "y": 0 },
-      { "name": "Hefezopf", 					"shortname": "Bröt.", 				"price": 0.45, "x": 4, "y": 1 }
-    ]
-  },
+      { "name": "Weißbrot", 					"shortname": "Weißbrot", 				"price": 2.75, "x": 0, "y": 0 },
+      { "name": "Rosinenbrot", 					"shortname": "Rosinenbrot", 			"price": 2.90, "x": 1, "y": 0 },
+      { "name": "Vollkornbrot", 				"shortname": "Vollkornbrot", 			"price": 3.70, "x": 0, "y": 1 },
+      { "name": "Mehrkornbrot", 				"shortname": "Mehrkornbrot", 			"price": 3.40, "x": 1, "y": 1 },
+      { "name": "Quarkbrot", 					"shortname": "Quarkbrot", 				"price": 3.10, "x": 2, "y": 1 },
+      { "name": "Roggenbrot", 					"shortname": "Roggenbrot", 				"price": 3.15, "x": 0, "y": 2 },
+      { "name": "Roggen Misch Brot", 			"shortname": "Rog Mi. Brot", 			"price": 3.05, "x": 1, "y": 2 },
+      { "name": "Roggen Vollkorn Brot", 		"shortname": "Rog Vollk. B.", 			"price": 3.35, "x": 2, "y": 2 },
+      { "name": "Dinkel Vollkorn Brot", 		"shortname": "Dnkl Vollk. B.", 			"price": 3.55, "x": 0, "y": 3 },
+      { "name": "Weizen Misch Brot", 			"shortname": "Weizen Mi. B.", 			"price": 3.40, "x": 1, "y": 3 },
+      { "name": "Kartoffelbrot", 				"shortname": "Kartoffelbrot", 			"price": 3.80, "x": 2, "y": 3 },
+      { "name": "3-Korn-Brot", 					"shortname": "3-Korn-Brot", 			"price": 3.60, "x": 0, "y": 4 },
+      { "name": "4-Korn-Brot", 					"shortname": "4-Korn-Brot", 			"price": 3.70, "x": 1, "y": 4 },
+      { "name": "Schrotbrot", 					"shortname": "Schrotbrot", 				"price": 2.90, "x": 2, "y": 4 },
+      { "name": "Paderborner Landbrot", 		"shortname": "Paderb. Landb.", 			"price": 4.15, "x": 0, "y": 5 },
+      { "name": "Weltmeisterbrot", 				"shortname": "Weltm-Brot", 				"price": 3.95, "x": 1, "y": 5 },
+      { "name": "Urgetreidebrot", 				"shortname": "Urgetr. Brot", 			"price": 4.25, "x": 2, "y": 5 },
+      { "name": "Pumpernickel", 				"shortname": "Pumpernickel", 			"price": 3.50, "x": 0, "y": 6 },
+      { "name": "Schwarzbrot", 					"shortname": "Schwarzbrot", 			"price": 2.10, "x": 1, "y": 6 },
+      { "name": "Walnussbrot", 					"shortname": "Walnussbrot", 			"price": 2.80, "x": 2, "y": 6 },
 
 
-  "Frisch": {
-    "buttons": [
-      { "name": "Käsebrötchen", 						"shortname": "Bröt.", 				"price": 0.45, "x": 0, "y": 0 },
-      { "name": "Käsebrötchen mit Speck", 				"shortname": "Bröt.", 				"price": 0.45, "x": 0, "y": 1 },
-      { "name": "Laugenbrezel", 						"shortname": "Bröt.", 				"price": 0.45, "x": 0, "y": 2 },
-      { "name": "Laugenstange", 						"shortname": "Bröt.", 				"price": 0.45, "x": 0, "y": 3 },
-      { "name": "Bele. Bröt. mit Käse (Gouda)", 		"shortname": "Bröt.", 				"price": 0.45, "x": 0, "y": 4 },
-      { "name": "Bele. Bröt. mit Käse (Emmenthaler)", 	"shortname": "Bröt.", 				"price": 0.45, "x": 1, "y": 0 },
-      { "name": "Bele. Bröt. mit Salami", 				"shortname": "Bröt.", 				"price": 0.45, "x": 1, "y": 1 },
-      { "name": "Bele. Bröt. mit Fleischwurst", 		"shortname": "Bröt.", 				"price": 0.45, "x": 1, "y": 2 },
-      { "name": "Bele. Bröt. mit Rührei", 				"shortname": "Bröt.", 				"price": 0.45, "x": 1, "y": 3 },
-      { "name": "Bele. Bröt. mit Toma. u. Mozza", 		"shortname": "Bröt.", 				"price": 0.45, "x": 1, "y": 4 },
-      { "name": "Bele. Bröt. mit Frikadelle", 			"shortname": "Bröt.", 				"price": 0.45, "x": 2, "y": 0 },
-      { "name": "Bele. Bröt. mit Pulled Pork", 			"shortname": "Bröt.", 				"price": 0.45, "x": 2, "y": 1 },
-      { "name": "Bele. Bröt. mit Camembert", 			"shortname": "Bröt.", 				"price": 0.45, "x": 2, "y": 2 },
-      { "name": "Fladenbrot mit Curryhuhn", 			"shortname": "Bröt.", 				"price": 0.45, "x": 2, "y": 3 },
-      { "name": "Fladenbrot mit Thunfisch", 			"shortname": "Bröt.", 				"price": 0.45, "x": 2, "y": 4 }
+      { "name": "Baguette", 					"shortname": "Baguette", 				"price": 2.45, "x": 3, "y": 4 },
+      { "name": "Ciabatta", 					"shortname": "Ciabatta", 				"price": 2.45, "x": 4, "y": 0 },
+      { "name": "Hefezopf", 					"shortname": "Hefezopf", 				"price": 2.45, "x": 4, "y": 1 }
     ]
   },
 
 
   "Getränke": {
+    "rows": 6,
+    "columns": 3,
     "buttons": [
-      { "name": "Espresso", 					"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 0 },
-      { "name": "Espresso (Doppelt)", 			"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 1 },
-      { "name": "Kaffee (Tasse)", 				"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 2 },
-      { "name": "Kaffee (Becher)", 				"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 3 },
-      { "name": "Kaffee (Kanne)", 				"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 4 },
-      { "name": "Cappuccino", 					"shortname": "Bröt.", 			"price": 0.45, "x": 1, "y": 0 },
-      { "name": "Cappuccino (ital.)", 			"shortname": "Bröt.", 			"price": 0.45, "x": 1, "y": 1 },
-      { "name": "Milchkaffe (Tasse)", 			"shortname": "Bröt.", 			"price": 0.45, "x": 1, "y": 2 },
-      { "name": "Milchkaffe (Becher)", 			"shortname": "Bröt.", 			"price": 0.45, "x": 1, "y": 3 },
-      { "name": "Kaffe Latte", 					"shortname": "Bröt.", 			"price": 0.45, "x": 1, "y": 4 },
-      { "name": "Kakao", 						"shortname": "Bröt.", 			"price": 0.45, "x": 2, "y": 0 },
-      { "name": "Kakao mit Sahne", 				"shortname": "Bröt.", 			"price": 0.45, "x": 2, "y": 1 },
-      { "name": "Heiße Milch", 					"shortname": "Bröt.", 			"price": 0.45, "x": 2, "y": 2 },
-      { "name": "Tee", 							"shortname": "Bröt.", 			"price": 0.45, "x": 2, "y": 3 },
-      { "name": "Wasser", 						"shortname": "Bröt.", 			"price": 0.45, "x": 2, "y": 4 },
-      { "name": "Saft", 						"shortname": "Bröt.", 			"price": 0.45, "x": 3, "y": 0 }
-    ]
-  },
-
-
-  "Kuchen": {
-    "buttons": [
-      { "name": "Apfelkuchen", 					"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 0 },
-      { "name": "Obstkuchen", 					"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 1 },
-      { "name": "Pflaumenkuchen", 				"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 2 },
-      { "name": "Bienenstich", 					"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 3 },
-      { "name": "Butterkuchen", 				"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 4 },
-      { "name": "Streuselkuchen", 				"shortname": "Bröt.", 			"price": 0.45, "x": 1, "y": 0 },
-      { "name": "Mohnkuchen", 					"shortname": "Bröt.", 			"price": 0.45, "x": 1, "y": 1 },
-      { "name": "Schmandkuchen", 				"shortname": "Bröt.", 			"price": 0.45, "x": 1, "y": 2 },
-      { "name": "Sachertorte", 					"shortname": "Bröt.", 			"price": 0.45, "x": 1, "y": 3 },
-      { "name": "Sandkuchen", 					"shortname": "Bröt.", 			"price": 0.45, "x": 1, "y": 4 },
-      { "name": "Schwarzwälder Kirsch", 		"shortname": "Bröt.", 			"price": 0.45, "x": 2, "y": 0 },
-      { "name": "Donauwelle", 					"shortname": "Bröt.", 			"price": 0.45, "x": 2, "y": 1 },
-      { "name": "Windbeutel", 					"shortname": "Bröt.", 			"price": 0.45, "x": 2, "y": 2 }
+      { "name": "Kaffee (Tasse)", 				"shortname": "Kaffee Ta.", 				"price": 2.00, "x": 0, "y": 0 },
+      { "name": "Kaffee (Becher)", 				"shortname": "Kaffee Be.", 				"price": 2.50, "x": 1, "y": 0 },
+      { "name": "Kaffee (Kanne)", 				"shortname": "Kaffee Kann.", 			"price": 6.50, "x": 2, "y": 0 },
+      { "name": "Espresso", 					"shortname": "Espresso", 				"price": 2.70, "x": 0, "y": 1 },
+      { "name": "Espresso (Doppelt)", 			"shortname": "Espresso Dopp.", 			"price": 4.50, "x": 1, "y": 1 },
+      { "name": "Milchkaffe (Tasse)", 			"shortname": "Milchkaffe Ta.", 			"price": 2.30, "x": 0, "y": 2 },
+      { "name": "Milchkaffe (Becher)", 			"shortname": "Milchkaffe Be.", 			"price": 2.80, "x": 1, "y": 2 },
+      { "name": "Kaffe Latte", 					"shortname": "Kaffe Latte", 			"price": 4.95, "x": 2, "y": 2 },
+      { "name": "Cappuccino", 					"shortname": "Cappuccino", 				"price": 2.60, "x": 0, "y": 3 },
+      { "name": "Cappuccino (ital.)", 			"shortname": "Cappuccino (ital.)", 		"price": 2.80, "x": 1, "y": 3 },
+      { "name": "Kakao", 						"shortname": "Kakao", 					"price": 3.00, "x": 0, "y": 4 },
+      { "name": "Kakao mit Sahne", 				"shortname": "Kakao mit Sahne", 		"price": 3.20, "x": 1, "y": 4 },
+      { "name": "Heiße Milch", 					"shortname": "Heiße Milch", 			"price": 2.70, "x": 2, "y": 4 },
+      { "name": "Tee", 							"shortname": "Tee", 					"price": 0.50, "x": 0, "y": 5 },
+      { "name": "Wasser", 						"shortname": "Wasser", 					"price": 1.00, "x": 1, "y": 5 },
+      { "name": "Saft", 						"shortname": "Saft", 					"price": 2.40, "x": 2, "y": 5 }
     ]
   },
 
 
   "Feingebäck": {
+    "rows": 4,
+    "columns": 4,
     "buttons": [
-      { "name": "Berliner", 			"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 0 },
-      { "name": "Amerikaner", 			"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 1 },
-      { "name": "Schweinsohr", 			"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 2 },
-      { "name": "Franzbrötchen", 		"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 3 },
-      { "name": "Rosinenschnecke", 		"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 4 },
-      { "name": "Marzipan- Plunder", 	"shortname": "Bröt.", 			"price": 0.45, "x": 1, "y": 0 },
-      { "name": "Mohn- Plunder", 		"shortname": "Bröt.", 			"price": 0.45, "x": 1, "y": 1 },
-      { "name": "Kirsch- Plunder", 		"shortname": "Bröt.", 			"price": 0.45, "x": 1, "y": 2 },
-      { "name": "Nuss- Plunder", 		"shortname": "Bröt.", 			"price": 0.45, "x": 1, "y": 3 },
-      { "name": "Plunderteilchen", 		"shortname": "Bröt.", 			"price": 0.45, "x": 1, "y": 4 },
-      { "name": "Nussecke", 			"shortname": "Bröt.", 			"price": 0.45, "x": 2, "y": 0 }
+      { "name": "Berliner", 			"shortname": "Berliner", 				"price": 2.75, "x": 0, "y": 0 },
+      { "name": "Amerikaner", 			"shortname": "Amerikaner", 				"price": 2.55, "x": 1, "y": 0 },
+      { "name": "Franzbrötchen", 		"shortname": "Franzbrötchen", 			"price": 2.50, "x": 2, "y": 0 },
+      { "name": "Plunder Marzipan", 	"shortname": "Plunder Marzipan", 		"price": 3.20, "x": 0, "y": 1 },
+      { "name": "Plunder Mohn", 		"shortname": "Plunder Mohn", 			"price": 3.20, "x": 1, "y": 1 },
+      { "name": "Plunder Kirsch", 		"shortname": "Plunder Kirsch", 			"price": 3.10, "x": 2, "y": 1 },
+      { "name": "Plunder Nuss", 		"shortname": "Plunder Nuss", 			"price": 3.30, "x": 3, "y": 1 },
+      { "name": "Plunderteilchen", 		"shortname": "Plunderteilchen", 		"price": 3.80, "x": 0, "y": 2 },
+      { "name": "Schweinsohr", 			"shortname": "Schweinsohr", 			"price": 2.90, "x": 1, "y": 2 },
+      { "name": "Nussecke", 			"shortname": "Nussecke", 				"price": 3.00, "x": 0, "y": 3 },
+      { "name": "Rosinenschnecke", 		"shortname": "Rosinenschnecke", 		"price": 2.70, "x": 1, "y": 3 },
+      { "name": "Zimtschnecke", 		"shortname": "Zimtschnecke", 			"price": 2.95, "x": 2, "y": 3 }
+    ]
+  },
+
+
+  "Kuchen": {
+    "rows": 4,
+    "columns": 3,
+    "buttons": [
+      { "name": "Obstkuchen", 					"shortname": "Obstkuchen", 					"price": 3.10, "x": 0, "y": 0 },
+      { "name": "Streuselkuchen", 				"shortname": "Streuselkuchen", 				"price": 3.20, "x": 1, "y": 0 },
+      { "name": "Butterkuchen", 				"shortname": "Butterkuchen", 				"price": 2.90, "x": 2, "y": 0 },
+      { "name": "Mohnkuchen", 					"shortname": "Mohnkuchen", 					"price": 2.90, "x": 0, "y": 1 },
+      { "name": "Schmandkuchen", 				"shortname": "Schmandkuchen", 				"price": 3.10, "x": 1, "y": 1 },
+      { "name": "Sandkuchen", 					"shortname": "Sandkuchen", 					"price": 3.00, "x": 2, "y": 1 },
+      { "name": "Sachertorte", 					"shortname": "Sachertorte", 				"price": 4.45, "x": 0, "y": 2 },
+      { "name": "Schwarzwälder Kirsch", 		"shortname": "Schwrzwä. Kir.", 				"price": 4.45, "x": 1, "y": 2 },
+      { "name": "Frankfurter Kranz", 			"shortname": "Frankfurter Kranz", 			"price": 3.70, "x": 2, "y": 2 },
+      { "name": "Donauwelle", 					"shortname": "Donauwelle", 					"price": 2.50, "x": 0, "y": 3 },
+      { "name": "Windbeutel", 					"shortname": "Windbeutel", 					"price": 3.50, "x": 1, "y": 3 },
+
+      { "name": "Apfelkuchen", 					"shortname": "Apfelkuchen", 				"price": 3.45, "x": 0, "y": 0 },
+      { "name": "Pflaumenkuchen", 				"shortname": "Pflaumenkuchen", 				"price": 3.45, "x": 0, "y": 2 },
+      { "name": "Bienenstich", 					"shortname": "Bienenstich", 				"price": 3.45, "x": 0, "y": 3 }
+    ]
+  },
+
+
+  "Frisch": {
+    "rows": 6,
+    "columns": 3,
+    "buttons": [
+      { "name": "Bele. Bröt. mit Käse (Gouda)", 		"shortname": "Bröt. m. Käse (Gou.)", 		"price": 3.20, "x": 0, "y": 0 },
+      { "name": "Bele. Bröt. mit Käse (Emmenthaler)", 	"shortname": "Bröt. m. Käse (Emnt.)", 		"price": 3.20, "x": 1, "y": 0 },
+      { "name": "Bele. Bröt. mit Fleischwurst", 		"shortname": "Bröt. m. Fleiw.", 			"price": 3.40, "x": 2, "y": 0 },
+      { "name": "Bele. Bröt. mit Ei", 					"shortname": "Bröt. m. Ei", 				"price": 3.80, "x": 0, "y": 1 },
+      { "name": "Bele. Bröt. mit Rührei", 				"shortname": "Bröt. m. Rührei", 			"price": 3.80, "x": 1, "y": 1 },
+      { "name": "Bele. Bröt. mit Salami", 				"shortname": "Bröt. m. Salami", 			"price": 3.40, "x": 2, "y": 1 },
+      { "name": "Bele. Bröt. mit Toma. u. Mozza", 		"shortname": "Bröt. m. To. u. Moz.", 		"price": 3.60, "x": 0, "y": 2 },
+      { "name": "Bele. Bröt. mit Camembert", 			"shortname": "Bröt. m. Camem.", 			"price": 3.80, "x": 1, "y": 2 },
+      { "name": "Bele. Bröt. mit Frikadelle", 			"shortname": "Bröt. m. Frika.", 			"price": 3.80, "x": 2, "y": 2 },
+      { "name": "Bele. Bröt. mit Pulled Pork", 			"shortname": "Bröt. m. Pul. Prk.", 			"price": 4.00, "x": 0, "y": 3 },
+      { "name": "Fladenbrot mit Curryhuhn", 			"shortname": "Fladb. m. Crryh.", 			"price": 4.50, "x": 1, "y": 3 },
+      { "name": "Fladenbrot mit Thunfisch", 			"shortname": "Fladb. m. Thunfisch", 		"price": 4.50, "x": 2, "y": 3 },
+      { "name": "Käsebrötchen", 						"shortname": "Käseb.", 						"price": 1.20, "x": 0, "y": 4 },
+      { "name": "Käsebrötchen mit Speck", 				"shortname": "Käseb. m. Speck", 			"price": 1.30, "x": 1, "y": 4 },
+      { "name": "Laugenbrezel", 						"shortname": "Laugenbrezel", 				"price": 1.20, "x": 0, "y": 5 },
+      { "name": "Laugenstange", 						"shortname": "Laugenstange", 				"price": 1.20, "x": 1, "y": 5 }
     ]
   },
 
 
   "Sonstiges": {
+    "rows": 3,
+    "columns": 3,
     "buttons": [
-      { "name": "Pasteten", 		"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 0 },
-      { "name": "Blätterteig", 		"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 1 },
-      { "name": "Baiser", 			"shortname": "Bröt.", 			"price": 0.45, "x": 0, "y": 2 }
+      { "name": "Pasteten", 				"shortname": "Pasteten", 				"price": 3.50, "x": 0, "y": 0 },
+      { "name": "Baiser", 					"shortname": "Baiser", 					"price": 3.30, "x": 2, "y": 0 },
+      { "name": "Baiser mit Nüssen", 		"shortname": "Baiser m. Nuss", 			"price": 3.30, "x": 2, "y": 0 },
+      { "name": "Zeitung BILD", 			"shortname": "Zeitung", 				"price": 2.00, "x": 0, "y": 2 }
     ]
   }
 

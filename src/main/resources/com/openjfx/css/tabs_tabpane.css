@@ -1,0 +1,85 @@
+
+/*
+   ****************************
+   * Styling TabPane and Tabs *
+   ****************************
+*/
+
+#tabs {
+	-fx-border-color: black;
+	-fx-border-width: 0 1 1 1;
+	-fx-border-radius: 10;
+	-fx-background-color: grey;
+	-fx-background-radius: 0 0 10 10;
+	-fx-background-insets: 71 0 0 0;
+}
+
+#tabs > .tab-header-area {
+	-fx-padding: 0;
+	-fx-border-radius: 10;
+	-fx-background-radius: 10;
+}
+
+#tabs .tab {
+	/* -fx-padding: 0 1em 0 1em; */
+	-fx-background-insets: 0;
+	-fx-background-color: #091a67, #104bb2; /*#0d7962;*/
+	-fx-border-color: black, black;
+	-fx-border-width: 1, 1;
+	/*-fx-border-insets: 1;*/
+	-fx-background-radius: 5 5 0 0, 5 5 0 0;
+	-fx-border-radius: 5 5 0 0, 5 5 0 0;
+	-fx-font-size: 1.3em;
+}
+
+#tabs .tab:selected {
+	-fx-background-color: #091a67; /*#076854;*/
+	-fx-border-color: black;
+	-fx-border-width: 1 0 0 0;
+	-fx-background-insets: 0;
+}
+
+#tabs .tab-header-background {
+	-fx-background-color: transparent;
+	-fx-border-radius: 10 10 0 0;
+	-fx-background-radius: 10 10 0 0;
+}
+
+#tabs .child-before-selected {
+	-fx-border-radius:  5 5 0 0, 5 5 20 0;
+	-fx-background-radius: 5 5 0 0, 5 5 20 0;
+	-fx-border-width: 1 0 1 1, 1;
+}
+
+#tabs .child-after-selected {
+	-fx-border-radius:  5 5 0 0, 5 5 0 20;
+	-fx-background-radius: 5 5 0 0, 5 5 0 20;
+	-fx-border-width: 1 1 1 0, 1;
+}
+
+/* #tabs .tab:selected .focus-indicator { -fx-border-width: 0; } */
+
+#tabs .tab-label {
+	-fx-text-fill: white;
+}
+
+#tabs .tab:selected .tab-label {
+	-fx-border-color: white;
+	-fx-border-width: 0 0 1 0;
+}
+
+
+#tabs .control-buttons-tab,
+#tabs .tab-down-button,
+#tabs .arrow {
+	-fx-pref-width: 0;
+}
+
+
+#tabs .button {
+	-fx-background-radius: 10;
+	-fx-border-radius: 10;
+	-fx-text-alignment: center;
+	-fx-wrap-text: true;
+	-fx-font-size: 1.2em;
+}

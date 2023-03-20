@@ -55,6 +55,19 @@ public class Price {
 	}
 
 	@Override
+	public boolean equals(Object o) {
+		if (o instanceof Price) {
+			Price p = (Price) o;
+			return this.euro == p.euro && this.cent == p.cent;
+		}
+		if (o instanceof CharSequence) {
+			Price p = new Price(o.toString());
+			return this.euro == p.euro && this.cent == p.cent;
+		}
+		return this.toString().equals(o.toString());
+	}
+
+	@Override
 	public int hashCode() {
 		return toCent();
 	}

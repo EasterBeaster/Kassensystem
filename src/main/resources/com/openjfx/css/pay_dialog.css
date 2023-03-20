@@ -1,0 +1,18 @@
+
+:root {
+	-fx-font-size: 10pt;
+}
+
+#euro5_btn  { -fx-background-image: url(../images/05EuroSchein.png); }
+#euro10_btn { -fx-background-image: url(../images/10EuroSchein.png); }
+#euro20_btn { -fx-background-image: url(../images/20EuroSchein.png); }
+#euro50_btn { -fx-background-image: url(../images/50EuroSchein.png); }
+
+#euro5_btn , 
+#euro10_btn, 
+#euro20_btn, 
+#euro50_btn {
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: cover;
+	-fx-background-position: center center;
+}

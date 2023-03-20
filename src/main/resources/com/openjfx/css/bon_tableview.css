@@ -1,0 +1,29 @@
+
+/*
+   ***************************
+   * Styling Bon and Buttons *
+   ***************************
+*/
+
+#bonview {
+	-fx-border-radius: 10px;
+	-fx-background-radius: 10px;
+	-fx-background-insets: 2 3 2 2;
+}
+
+#bonview .column-header-background {
+	-fx-background-color: dodgerblue;
+	-fx-border-radius: 10px 10px 0 0;
+	-fx-background-radius: 10px 10px 0 0;
+	/* -fx-background-insets: 0 11px 0 0; */
+	/* -fx-padding: 0 0 5px 0; */
+}
+
+.table-view .column-header,
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+
+#bonview_amount_col, #bonview_price_col {
+	-fx-alignment: center-right;
+}
