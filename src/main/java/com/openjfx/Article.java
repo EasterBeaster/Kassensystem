@@ -4,12 +4,6 @@ public record Article (String name,
 					   String shortname,
 					   Price baseprice) {
 
-	public Article(String name, String shortname, Price baseprice) {
-		this.name = name;
-		this.shortname = shortname;
-		this.baseprice = baseprice;
-	}
-
 	public Article() {
 		this("Unbekanter Artikel", "Unbekannt", new Price());
 	}

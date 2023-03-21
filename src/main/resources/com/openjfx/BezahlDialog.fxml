@@ -18,16 +18,16 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<DialogPane headerText="Bezahlvorgang - Bar" style="-fx-background-color: #ffb734;" stylesheets="@css/pay_dialog.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.openjfx.FxDialogController">
+<DialogPane fx:id="dialogpane" headerText="Bezahlvorgang - Bar" style="-fx-background-color: #ffb734;" stylesheets="@css/pay_dialog.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.openjfx.FxDialogController">
    <content>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" spacing="10.0">
          <children>
             <TableView fx:id="itemdisplaytable" focusTraversable="false" prefHeight="480.0" prefWidth="450.0" />
             <VBox maxWidth="-Infinity" prefHeight="480.0" prefWidth="520.0" HBox.hgrow="ALWAYS">
                <children>
-                  <HBox alignment="CENTER_RIGHT" VBox.vgrow="NEVER">
+                  <HBox alignment="CENTER_RIGHT" maxWidth="351.0" styleClass="hero_totalscreen" VBox.vgrow="NEVER">
                      <VBox.margin>
-                        <Insets bottom="5.0" left="30.0" right="30.0" />
+                        <Insets bottom="10.0" left="85.0" right="30.0" />
                      </VBox.margin>
                      <children>
                         <Label focusTraversable="false" text="Gesamt:">
@@ -35,26 +35,29 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
                            <font>
-                              <Font size="24.0" />
+                              <Font size="32.0" />
                            </font>
                         </Label>
-                        <Region maxWidth="100.0" HBox.hgrow="ALWAYS" />
-                        <Label fx:id="totalscreen" text="34,95 €">
+                        <Region maxWidth="150.0" HBox.hgrow="SOMETIMES" />
+                        <Label fx:id="totalscreen" text="34,95 €" underline="true">
                            <font>
-                              <Font size="24.0" />
+                              <Font size="32.0" />
                            </font>
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
                            <HBox.margin>
-                              <Insets right="80.0" />
+                              <Insets />
                            </HBox.margin>
                         </Label>
                      </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
                   </HBox>
                   <StackPane fx:id="layeredPane" prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="430.0" prefWidth="520.0">
+                        <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="430.0" prefWidth="520.0" styleClass="layer_banknote" visible="false">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -114,7 +117,7 @@
                               </DropShadow>
                            </effect>
                         </GridPane>
-                        <GridPane hgap="16.0" vgap="16.0" visible="false" StackPane.alignment="TOP_LEFT">
+                        <GridPane hgap="16.0" maxWidth="351.0" styleClass="layer_enterpayed" vgap="16.0" StackPane.alignment="TOP_CENTER">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -133,7 +136,7 @@
                                     <Insets />
                                  </GridPane.margin>
                               </TextField>
-                              <Button mnemonicParsing="false" prefHeight="30.0" text="Lösche" GridPane.columnIndex="2" GridPane.halignment="LEFT">
+                              <Button fx:id="btn_clear" maxWidth="130.0" mnemonicParsing="false" prefHeight="30.0" text="Lösche" GridPane.columnIndex="2" GridPane.halignment="LEFT">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>
@@ -195,7 +198,7 @@
                               </Button>
                            </children>
                         </GridPane>
-                        <VBox prefHeight="200.0" prefWidth="100.0" visible="false">
+                        <VBox prefHeight="200.0" prefWidth="100.0" styleClass="layer_showchange" visible="false">
                            <children>
                               <HBox>
                                  <children>

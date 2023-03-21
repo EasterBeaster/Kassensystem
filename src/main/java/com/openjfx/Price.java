@@ -13,19 +13,9 @@ public class Price {
 	}
 
 	public Price(String value) {
-		value = value.trim();
-
-		int sep = value.indexOf(',');
-		if (sep == -1)
-			sep = value.indexOf('.');
-		if (sep == -1) {
-			this.euro = parseInnerInt(value);
-			this.cent = 0;
-			return;
-		}
-
-		this.euro = parseInnerInt(value.substring(0, sep));
-		this.cent = parseInnerInt(value.substring(sep+1));
+		Price l_euro = parsePrice(value);
+		this.euro = l_euro.euro;
+		this.cent = l_euro.cent;
 	}
 
 	public Price(int euro, int cent) {
@@ -37,6 +27,14 @@ public class Price {
 	public Price(double value) {
 		this.euro = (int) value;
 		this.cent = (int) Math.round((value - euro) * 100);
+	}
+
+	public int euro() {
+		return euro;
+	}
+
+	public int cent() {
+		return cent;
 	}
 
 	public Price multiply(int factor) {
@@ -72,6 +70,25 @@ public class Price {
 		return toCent();
 	}
 
+	public static Price parsePrice(String value) {
+		value = value.trim();
+
+		int sep = value.indexOf(',');
+		if (sep == -1)
+			sep = value.indexOf('.');
+		if (sep == -1) {
+			return new Price(parseInnerInt(value), 0);
+		}
+
+		return new Price(parseInnerInt(value.substring(0, sep)),
+						 parseInnerInt(value.substring(sep+1)));
+	}
+
+	public static Price parsePrice(double value) {
+		int l_euro = (int) value;
+		return new Price(l_euro, (int) Math.round((value - l_euro) * 100));
+	}
+
 	public static Price addAll(Collection<Price> list) {
 		int e= 0, c=0;
 
@@ -81,6 +98,7 @@ public class Price {
 		}
 		return new Price(e, c);
 	}
+
 	private static int parseInnerInt(String s) {
 		final int LEN = s.length();
 		int i = 0;

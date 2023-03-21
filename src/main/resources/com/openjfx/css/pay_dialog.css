@@ -1,6 +1,30 @@
 
 :root {
 	-fx-font-size: 10pt;
+	-fx-background-color: #ffb734;
+}
+
+.button {
+	/* -fx-max-width: 999px;
+	-fx-max-height: 999px; */
+	-fx-border-color: black;
+	-fx-border-width: 1;
+	-fx-background-insets: 0 0 1 0;
+	-fx-cursor: hand;
+}
+
+.text-field {
+	-fx-border-color: black;
+	-fx-border-width: 1;
+	-fx-border-radius: 4;
+}
+
+.hero_totalscreen {
+	-fx-background-color: rgb(175, 206, 107);
+	-fx-border-color: olivedrab;
+	-fx-border-width: 2;
+	-fx-border-radius: 5;
+	-fx-background-radius: 5;
 }
 
 #euro5_btn  { -fx-background-image: url(../images/05EuroSchein.png); }
@@ -15,4 +39,20 @@
 	-fx-background-repeat: no-repeat;
 	-fx-background-size: cover;
 	-fx-background-position: center center;
+}
+
+.layer_enterpayed {
+	-fx-font-size: 1.7em;
+}
+
+.layer_enterpayed .button {
+	-fx-border-radius: 5;
+	-fx-background-radius: 5;
+	-fx-background-color: #DBDBDB;
+}
+
+#btn_clear {
+	/* -fx-max-width: -1;
+	-fx-max-height: -1; */
+	-fx-background-color: tomato;
 }

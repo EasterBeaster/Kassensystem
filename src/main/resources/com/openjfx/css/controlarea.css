@@ -29,7 +29,6 @@
 #btn_abort         { -fx-background-color: #fc7c46; }
 
 #btn_pay {
-	/* -fx-background-image: url(../images/Cash_Icon.png); */
 	-fx-background-size: contain;
 	-fx-background-repeat: no-repeat;
 	-fx-background-position: center;

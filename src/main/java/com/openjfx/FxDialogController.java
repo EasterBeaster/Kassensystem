@@ -1,10 +1,8 @@
 
 package com.openjfx;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.beans.property.StringProperty;
 import javafx.collections.ObservableList;
@@ -12,6 +10,8 @@ import javafx.fxml.FXML;
 
 public class FxDialogController {
 
+	@FXML
+	private DialogPane dialogpane;
 	@FXML
 	private Label totalscreen;
 	@FXML
@@ -79,11 +79,33 @@ public class FxDialogController {
 		itemdisplaytable.getColumns().addAll(pTable.getColumns());
 		itemdisplaytable.setItems(pTable.getItems());
 	}
-	
+
 	private byte currentLayer = 0;
+	private byte lastLayer = 0;
 	private void switchToLayer(byte b) {
 		layeredPane.getChildren().get(currentLayer).setVisible(false);
 		layeredPane.getChildren().get(b).setVisible(true);
+		lastLayer = currentLayer;
 		currentLayer = b;
+
+		switch (b) {
+			case 0 -> {
+				dialogpane.getButtonTypes().setAll(ButtonType.CANCEL, ButtonType.FINISH);
+				dialogpane.lookupButton(ButtonType.FINISH).setDisable(true);
+			}
+			case 1 -> {
+				dialogpane.getButtonTypes().setAll(ButtonType.CANCEL, ButtonType.PREVIOUS, ButtonType.FINISH);
+				dialogpane.lookupButton(ButtonType.FINISH).setDisable(true);
+				dialogpane.lookupButton(ButtonType.PREVIOUS).setOnMouseClicked(GotoLL);
+			}
+			case 2 -> {
+				dialogpane.getButtonTypes().setAll(ButtonType.CANCEL, ButtonType.PREVIOUS, ButtonType.FINISH);
+				dialogpane.lookupButton(ButtonType.PREVIOUS).setOnMouseClicked(GotoLL);
+			}
+			default -> throw new IllegalArgumentException("Layer Nr."+ (b+1) + " does not exist.");
+		}
 	}
+
+	private final javafx.event.EventHandler<? super MouseEvent> GotoLL = MouseEvt -> switchToLayer(lastLayer);
+	//private static final byte LAYER_BANKNOTES = 0, LAYER_MAN_PRICE = 1, LAYER_CHANGE = 2;
 }
