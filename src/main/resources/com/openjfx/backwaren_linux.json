@@ -51,12 +51,7 @@
       { "name": "Urgetreidebrot", 				"shortname": "Urgetr. Brot", 			"price": 4.25, "x": 2, "y": 5 },
       { "name": "Pumpernickel", 				"shortname": "Pumpernickel", 			"price": 3.50, "x": 0, "y": 6 },
       { "name": "Schwarzbrot", 					"shortname": "Schwarzbrot", 			"price": 2.10, "x": 1, "y": 6 },
-      { "name": "Walnussbrot", 					"shortname": "Walnussbrot", 			"price": 2.80, "x": 2, "y": 6 },
-
-
-      { "name": "Baguette", 					"shortname": "Baguette", 				"price": 2.45, "x": 3, "y": 4 },
-      { "name": "Ciabatta", 					"shortname": "Ciabatta", 				"price": 2.45, "x": 4, "y": 0 },
-      { "name": "Hefezopf", 					"shortname": "Hefezopf", 				"price": 2.45, "x": 4, "y": 1 }
+      { "name": "Walnussbrot", 					"shortname": "Walnussbrot", 			"price": 2.80, "x": 2, "y": 6 }
     ]
   },
 
@@ -157,9 +152,9 @@
     "columns": 3,
     "buttons": [
       { "name": "Pasteten", 				"shortname": "Pasteten", 				"price": 3.50, "x": 0, "y": 0 },
-      { "name": "Baiser", 					"shortname": "Baiser", 					"price": 3.30, "x": 2, "y": 0 },
+      { "name": "Baiser", 					"shortname": "Baiser", 					"price": 3.30, "x": 1, "y": 0 },
       { "name": "Baiser mit Nüssen", 		"shortname": "Baiser m. Nuss", 			"price": 3.30, "x": 2, "y": 0 },
-      { "name": "Zeitung BILD", 			"shortname": "Zeitung", 				"price": 2.00, "x": 0, "y": 2 }
+      { "name": "Zeitung BILD", 			"shortname": "Zeitung", 				"price": 2.00, "x": 0, "y": 1 }
     ]
   }
 

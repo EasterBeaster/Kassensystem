@@ -59,7 +59,7 @@ public class FxFXMLController {
 			}
 		});
 
-		smallscreen.setTextFormatter(new TextFormatter<String>(numberFormatter));
+		smallscreen.setTextFormatter(new TextFormatter<String>(SceneUtil.numberFormatter));
 
 		initBonview();
 		initTabpane();
@@ -142,7 +142,7 @@ public class FxFXMLController {
 			dialog.setDialogPane(pane);
 			dialog.setTitle("Bezahlvorgang");
 
-			dialog.showAndWait();
+			 dialog.showAndWait();
 		} catch (IOException ex) {
 			System.err.println("Dialog konnte nicht geöffnet werden!");
 			ex.printStackTrace();
@@ -243,7 +243,7 @@ public class FxFXMLController {
 			}
 		}
 
-		// tabs.tabMinWidthProperty().bind(Bindings.min(150, tabs.widthProperty().divide(tabs.getTabs().size()*0.77)));
+		tabs.tabMinWidthProperty().bind(tabs.widthProperty().divide(tabs.getTabs().size()*0.77));
 
 		// Style adjacent Tabs with round Corners
 		tabs.getSelectionModel().selectedItemProperty().addListener(this::changeCSSofTab);
@@ -306,39 +306,6 @@ public class FxFXMLController {
 
 	}
 
-	private final UnaryOperator<TextFormatter.Change> numberFormatter = change -> {
-		String potentialNewVal = change.getControlNewText();
-		if (!potentialNewVal.matches("\\d{0,3}(,\\d{0,2})?")) {
-			System.out.println("\"" + potentialNewVal + "\" hat das falsche Format.");
-			return null;
-		}
-		if (potentialNewVal.startsWith(",")) {
-			change.setText('0' + change.getText());
-			// System.out.println("Caret-Position:" + change.getCaretPosition());
-			// System.out.println("Anchor-Position:" + change.getAnchor() + "\n");
-			change.setCaretPosition(change.getCaretPosition()+1);
-			change.setAnchor(change.getAnchor()+1);
-			// change.setRange(change.getRangeStart(), change.getRangeEnd()+1);
-			return change;
-		}
-
-		// Entferne führende Nullen
-		if (potentialNewVal.startsWith("0") && !potentialNewVal.startsWith("0,")) {
-			int s = potentialNewVal.length();
-			int i = 1;
-			while(i < s && potentialNewVal.charAt(i) == '0')
-				i++;
-			if (i >= s)
-				change.setText("0");
-			else
-				change.setText(potentialNewVal.substring(i)); // Erster Index ohne Null 
-
-			change.setRange(0, change.getControlText().length());
-		}
-
-		return change;
-	};
-
 	private void addItemToBon(ActionEvent evt) {
 		Article a = ((TabPaneButton) evt.getSource()).getArticle();
 
@@ -393,10 +360,4 @@ public class FxFXMLController {
 
 	//******** Private-Static-Methods - Please Ignore ********//
 
-	/* private static void addPseudoClassIfAbsent(javafx.css.Styleable styleable, String styleClass) {
-		ObservableList<String> styleClasses = styleable.getStyleClass();
-		if (!styleClasses.contains(styleClass)) {
-			styleClasses.add(styleClass);
-		}
-	} */
 }

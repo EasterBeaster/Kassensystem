@@ -5,13 +5,13 @@
    ***************************
 */
 
-#bonview {
+.table-view {
 	-fx-border-radius: 10px;
 	-fx-background-radius: 10px;
 	-fx-background-insets: 2 3 2 2;
 }
 
-#bonview .column-header-background {
+.table-view .column-header-background {
 	-fx-background-color: dodgerblue;
 	-fx-border-radius: 10px 10px 0 0;
 	-fx-background-radius: 10px 10px 0 0;

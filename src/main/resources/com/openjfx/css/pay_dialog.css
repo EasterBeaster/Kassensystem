@@ -41,11 +41,11 @@
 	-fx-background-position: center center;
 }
 
-.layer_enterpayed {
+.layer_enterpaid {
 	-fx-font-size: 1.7em;
 }
 
-.layer_enterpayed .button {
+.layer_enterpaid .button {
 	-fx-border-radius: 5;
 	-fx-background-radius: 5;
 	-fx-background-color: #DBDBDB;
