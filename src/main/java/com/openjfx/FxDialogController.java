@@ -49,30 +49,16 @@ public class FxDialogController {
 	private Price totalAmount;
 	private Price paidAmount;
 
+	private Dialog<ButtonType> dialog;
+
 
 	@FXML
 	private void initialize() {
 		// Layer 1
-		euro5_btn.setOnAction( evt -> {
-			paidAmount = new Price( 5, 0);
-			money_paid.setText(paidAmount.toString());
-			switchToLayer((byte) 2);
-		});
-		euro10_btn.setOnAction( evt -> {
-			paidAmount = new Price(10, 0);
-			money_paid.setText(paidAmount.toString());
-			switchToLayer((byte) 2);
-		});
-		euro20_btn.setOnAction( evt -> {
-			paidAmount = new Price(20, 0);
-			money_paid.setText(paidAmount.toString());
-			switchToLayer((byte) 2);
-		});
-		euro50_btn.setOnAction( evt -> {
-			paidAmount = new Price(50, 0);
-			money_paid.setText(paidAmount.toString());
-			switchToLayer((byte) 2);
-		});
+		euro5_btn.setOnAction(  evt -> updateLabelsOnLayer3(new Price( 5, 0), (byte) 2) );
+		euro10_btn.setOnAction( evt -> updateLabelsOnLayer3(new Price(10, 0), (byte) 2) );
+		euro20_btn.setOnAction( evt -> updateLabelsOnLayer3(new Price(20, 0), (byte) 2) );
+		euro50_btn.setOnAction( evt -> updateLabelsOnLayer3(new Price(50, 0), (byte) 2) );
 		other_euro_btn.setOnAction( evt -> switchToLayer((byte) 1));
 
 		// Layer 2
@@ -80,7 +66,7 @@ public class FxDialogController {
 			money_textfield.setText("");
 			switchToLayer((byte) 0);
 		});
-		layer2_goRight.setOnAction(evt -> switchToLayer((byte) 2));
+		layer2_goRight.setOnAction(evt -> updateLabelsOnLayer3(new Price(money_textfield.getText()), (byte) 2) );
 		layer2_goRight.disableProperty().bind(money_textfield.textProperty().isEmpty());
 
 		layer_enterpaid.getChildren().filtered(n -> n != btn_clear && n != money_textfield).forEach(n -> {
@@ -107,7 +93,15 @@ public class FxDialogController {
 
 	@FXML
 	void onCompletePayment(ActionEvent event) {
+		dialog.setResult(ButtonType.FINISH);
+		dialog.close();
+	}
 
+	private void updateLabelsOnLayer3(Price p, byte gotoLayer) {
+		paidAmount = p;
+		money_paid.setText(p.toString());
+		money_back.setText(new Price(0, paidAmount.toCent() - totalAmount.toCent()).toString());
+		switchToLayer(gotoLayer);
 	}
 	
 	public void setTotal(StringProperty prop, Price total) {
@@ -130,6 +124,10 @@ public class FxDialogController {
 		itemdisplaytable.setItems(pTable.getItems());
 	}
 
+	public void setDialog(Dialog<ButtonType> parent) {
+		dialog = parent;
+	}
+
 	private byte currentLayer = 0;
 	private byte lastLayer = 0;
 	private void switchToLayer(byte b) {
@@ -137,27 +135,6 @@ public class FxDialogController {
 		layeredPane.getChildren().get(b).setVisible(true);
 		lastLayer = currentLayer;
 		currentLayer = b;
-
-		/*switch (b) {
-			case 0 -> {
-				//dialogpane.getButtonTypes().setAll(ButtonType.CANCEL, ButtonType.FINISH);
-				dialogpane.lookupButton(ButtonType.PREVIOUS).setDisable(true);
-				dialogpane.lookupButton(ButtonType.FINISH).setDisable(true);
-			}
-			case 1 -> {
-				//dialogpane.getButtonTypes().setAll(ButtonType.CANCEL, ButtonType.PREVIOUS, ButtonType.FINISH);
-				dialogpane.lookupButton(ButtonType.PREVIOUS).setDisable(false);
-				dialogpane.lookupButton(ButtonType.FINISH).setDisable(true);
-				dialogpane.lookupButton(ButtonType.PREVIOUS).setOnMouseClicked(GotoLL);
-			}
-			case 2 -> {
-				//dialogpane.getButtonTypes().setAll(ButtonType.CANCEL, ButtonType.PREVIOUS, ButtonType.FINISH);
-				dialogpane.lookupButton(ButtonType.PREVIOUS).setDisable(false);
-				dialogpane.lookupButton(ButtonType.FINISH).setDisable(false);
-				dialogpane.lookupButton(ButtonType.PREVIOUS).setOnMouseClicked(GotoLL);
-			}
-			default -> throw new IllegalArgumentException("Layer Nr."+ (b+1) + " does not exist.");
-		}*/
 	}
 
 	private final javafx.event.EventHandler<? super MouseEvent> GotoLL = MouseEvt -> switchToLayer(lastLayer);

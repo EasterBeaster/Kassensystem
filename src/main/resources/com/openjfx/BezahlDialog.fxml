@@ -16,18 +16,19 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
 <DialogPane fx:id="dialogpane" headerText="Bezahlvorgang - Bar" style="-fx-background-color: #ffb734;" stylesheets="@css/pay_dialog.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.openjfx.FxDialogController">
    <content>
-      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" spacing="30.0">
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1050.0" spacing="30.0">
          <children>
             <TableView fx:id="itemdisplaytable" focusTraversable="false" prefHeight="480.0" prefWidth="450.0" stylesheets="@css/bon_tableview.css" />
             <VBox maxWidth="-Infinity" prefHeight="480.0" prefWidth="520.0" HBox.hgrow="ALWAYS">
                <children>
-                  <HBox alignment="CENTER_RIGHT" maxWidth="351.0" styleClass="hero_totalscreen" VBox.vgrow="NEVER">
+                  <HBox alignment="CENTER_RIGHT" maxWidth="332.0" styleClass="hero_totalscreen" VBox.vgrow="NEVER">
                      <VBox.margin>
-                        <Insets bottom="10.0" left="78.0" right="30.0" />
+                        <Insets bottom="10.0" left="94.0" />
                      </VBox.margin>
                      <children>
                         <Label focusTraversable="false" text="Gesamt:">
@@ -117,7 +118,7 @@
                               </DropShadow>
                            </effect>
                         </GridPane>
-                        <GridPane fx:id="layer_enterpaid" hgap="16.0" styleClass="layer_enterpaid" vgap="16.0" visible="false" StackPane.alignment="TOP_CENTER">
+                        <GridPane fx:id="layer_enterpaid" hgap="16.0" styleClass="layer_enterpaid" vgap="16.0" StackPane.alignment="TOP_CENTER">
                           <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -138,7 +139,7 @@
                                     <Insets />
                                  </GridPane.margin>
                               </TextField>
-                              <Button fx:id="btn_clear" maxWidth="130.0" mnemonicParsing="false" prefHeight="30.0" text="Lösche" GridPane.columnIndex="3" GridPane.halignment="LEFT">
+                              <Button fx:id="btn_clear" maxWidth="130.0" mnemonicParsing="false" prefHeight="30.0" text="Lösche" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>
@@ -202,15 +203,21 @@
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin>
+                                 <graphic>
+                                    <SVGPath content="M 65.75 90 c 0.896 0 1.792 -0.342 2.475 -1.025 c 1.367 -1.366 1.367 -3.583 0 -4.949 L 29.2 45 L 68.225 5.975 c 1.367 -1.367 1.367 -3.583 0 -4.95 c -1.367 -1.366 -3.583 -1.366 -4.95 0 l -41.5 41.5 c -1.367 1.366 -1.367 3.583 0 4.949 l 41.5 41.5 C 63.958 89.658 64.854 90 65.75 90 z" fill="#636363" scaleX="0.8" />
+                                 </graphic>
                               </Button>
                               <Button fx:id="layer2_goRight" mnemonicParsing="false" prefHeight="120.0" prefWidth="70.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowSpan="2147483647">
                                  <GridPane.margin>
                                     <Insets left="10.0" />
                                  </GridPane.margin>
+                                 <graphic>
+                                    <SVGPath content="M 65.75 90 c 0.896 0 1.792 -0.342 2.475 -1.025 c 1.367 -1.366 1.367 -3.583 0 -4.949 L 29.2 45 L 68.225 5.975 c 1.367 -1.367 1.367 -3.583 0 -4.95 c -1.367 -1.366 -3.583 -1.366 -4.95 0 l -41.5 41.5 c -1.367 1.366 -1.367 3.583 0 4.949 l 41.5 41.5 C 63.958 89.658 64.854 90 65.75 90 z" fill="#636363" rotate="180.0" scaleX="0.8" />
+                                 </graphic>
                               </Button>
                            </children>
                         </GridPane>
-                        <VBox prefHeight="200.0" prefWidth="100.0" styleClass="layer_showchange">
+                        <VBox prefHeight="200.0" prefWidth="100.0" styleClass="layer_showchange" visible="false">
                            <children>
                               <HBox>
                                  <children>
@@ -274,6 +281,9 @@
                </children>
             </VBox>
          </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
       </HBox>
    </content>
    <header>

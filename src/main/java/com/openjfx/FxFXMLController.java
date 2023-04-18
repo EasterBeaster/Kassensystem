@@ -133,16 +133,25 @@ public class FxFXMLController {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("BezahlDialog.fxml"));
 			DialogPane pane = loader.load();
 
-			FxDialogController diCon = loader.getController();
-
-			diCon.setTotal(totalscreen.textProperty(), currentTotalAsPrice);
-			diCon.setTable(bonview);
-
 			Dialog<ButtonType> dialog = new Dialog<>();
 			dialog.setDialogPane(pane);
 			dialog.setTitle("Bezahlvorgang");
 
-			 dialog.showAndWait();
+			FxDialogController diCon = loader.getController();
+
+			diCon.setTotal(totalscreen.textProperty(), currentTotalAsPrice);
+			diCon.setTable(bonview);
+			diCon.setDialog(dialog);
+
+			Optional<ButtonType> result = dialog.showAndWait();
+
+			if(result.isPresent() && result.get() == ButtonType.FINISH) {
+				bondata.clear();
+
+				charqueue = "";
+				smallscreen.setText("");
+			}
+
 		} catch (IOException ex) {
 			System.err.println("Dialog konnte nicht geöffnet werden!");
 			ex.printStackTrace();
