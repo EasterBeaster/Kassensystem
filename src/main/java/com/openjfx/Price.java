@@ -71,6 +71,8 @@ public class Price {
 	}
 
 	public static Price parsePrice(String value) {
+		if(value.isBlank())
+			return new Price();
 		value = value.trim();
 
 		int sep = value.indexOf(',');
@@ -100,6 +102,8 @@ public class Price {
 	}
 
 	private static int parseInnerInt(String s) {
+		if(s.isBlank())
+			return 0;
 		final int LEN = s.length();
 		int i = 0;
 		while (!Character.isDigit(s.charAt(i)) && ++i < LEN);

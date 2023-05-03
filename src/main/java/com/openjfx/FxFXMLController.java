@@ -21,9 +21,7 @@ import mjson.Json;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
-import java.util.function.UnaryOperator;
 
-// import com.openjfx.BonItem;
 // import static com.openjfx.TabColumnThemes.applyColumnStyle;
 
 public class FxFXMLController {
@@ -205,27 +203,28 @@ public class FxFXMLController {
 
 				AnchorPane.setTopAnchor(gridp, 0.0);
 				AnchorPane.setRightAnchor(gridp, 0.0);
-				//AnchorPane.setBottomAnchor(gridp, 0.0);
+				AnchorPane.setBottomAnchor(gridp, 0.0);
 				AnchorPane.setLeftAnchor(gridp, 0.0);
 
+				Json menu = json.at(colName.asString());
 				byte anzrows = 7, anzcolumns = 5;
-				if (json.has("rows"))
-					anzrows = json.at("rows").asByte();
-				if (json.has("columns"))
-					anzrows = json.at("columns").asByte();
+				if (menu.has("rows"))
+					anzrows = menu.at("rows").asByte();
+				if (menu.has("columns"))
+					anzcolumns = menu.at("columns").asByte();
 
 				for (byte i = 0; i < anzrows; i++) {
-					RowConstraints constraint = new RowConstraints(100, 120, 200);
+					RowConstraints constraint = new RowConstraints(100, 130, 200);
 					constraint.setVgrow(Priority.SOMETIMES);
 					gridp.getRowConstraints().add(constraint);
 				}
 				for (byte i = 0; i < anzcolumns; i++) {
-					ColumnConstraints constraint = new ColumnConstraints(110, 150, 225);
+					ColumnConstraints constraint = new ColumnConstraints(110, 170, 225);
 					constraint.setHgrow(Priority.SOMETIMES);
 					gridp.getColumnConstraints().add(constraint);
 				}
 
-				var articlelist = json.at(colName.asString()).at("buttons").asJsonList();
+				var articlelist = menu.at("buttons").asJsonList();
 				for (Json article_info : articlelist) {
 					String artiName = article_info.at("name").asString();
 					String artiShortname = article_info.has("shortname") ? article_info.at("shortname").asString() : artiName;
@@ -252,7 +251,7 @@ public class FxFXMLController {
 			}
 		}
 
-		tabs.tabMinWidthProperty().bind(tabs.widthProperty().divide(tabs.getTabs().size()*0.77));
+		tabs.tabMinWidthProperty().bind(tabs.widthProperty().divide(tabs.getTabs().size()*1.20));
 
 		// Style adjacent Tabs with round Corners
 		tabs.getSelectionModel().selectedItemProperty().addListener(this::changeCSSofTab);
@@ -269,50 +268,6 @@ public class FxFXMLController {
 
 		smallscreen.appendText(btnInput);
 		charqueue = smallscreen.getText();
-
-		/*
-		if (charqueue.isEmpty()) {
-			if (btnInput.equals(",")) {
-				charqueue = "0,";
-				smallscreen.setText("0,");
-			} else if (!btnInput.equals("0")) {
-				charqueue = btnInput;
-				smallscreen.setText(btnInput);
-			}
-			return;
-		}
-
-		int lio = charqueue.lastIndexOf(',');
-
-		// Noch kein Komma; Min eine Zahl != 0 in der Queue
-		if (lio == -1) {
-			if (btnInput.equals(",")) {
-				charqueue += ',';
-				smallscreen.setText(charqueue);
-			} else {
-				if (charqueue.length() < 3) {
-					charqueue += btnInput;
-					smallscreen.setText(charqueue);
-				} else {
-					charqueue = "999";
-					smallscreen.setText("999");
-				}
-			}
-			return;
-		}
-
-		if (!btnInput.equals(","))
-			switch (charqueue.length() - lio -1) {
-				case 0:
-				case 1: // 0 oder 1 Nachkommastelle
-					charqueue += btnInput;
-					smallscreen.setText(charqueue);
-					break;
-
-				default:
-					System.out.println("Nicht mehr als 2 Nachkommastellen sind erlaubt!");
-			}*/
-
 	}
 
 	private void addItemToBon(ActionEvent evt) {

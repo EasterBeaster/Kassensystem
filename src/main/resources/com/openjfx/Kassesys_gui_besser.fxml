@@ -204,7 +204,7 @@
                                     <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                  </GridPane.margin>
                                  <graphic>
-                                    <ImageView fitHeight="45.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" />
+                                    <SVGPath content="m20.37 8.91l-1 1.73l-12.13-7l1-1.73l3.04 1.75l1.36-.37l4.33 2.5l.37 1.37l3.03 1.75M6 19V7h5.07L18 11v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2Z" fill="#1a1a1acc" scaleX="1.5" scaleY="1.5" />
                                  </graphic>
                               </Button>
                               <Button fx:id="btn_enter" mnemonicParsing="false" onAction="#enter_pressed" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
